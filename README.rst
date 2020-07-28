@@ -48,6 +48,8 @@ Usage
             filename = change['owner'].filename
             print('Uploaded `{}` ({:.2f} kB)'.format(
                 filename, len(decoded.read()) / 2 **10))
+            # file content stored in file_contents
+            file_contents = decoded.getvalue()
 
         _upload_widget.observe(_cb, names='data')
         display(_upload_widget)
